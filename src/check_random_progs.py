@@ -12,7 +12,6 @@ import time
 import json
 
 import util
-import validate_p4_translation as validation
 
 # configure logging
 log = logging.getLogger(__name__)
@@ -298,7 +297,7 @@ def check(idx, config):
             dump_file(CRASH_BUG_DIR, p4_file)
             if config["do_prune"]:
                 info_file = CRASH_BUG_DIR.joinpath(f"{p4_file.stem}_info.json")
-                info = validation.INFO
+                info = 1
                 # customize the main info with the new information
                 info["compiler"] = str(config["compiler_bin"])
                 info["exit_code"] = result.returncode
